@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import AddSubscriber from './AddSubscriber';
-import './common/common.css'
+import './common/common.css';
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AddSubscriber />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
