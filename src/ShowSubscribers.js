@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
 import Header from "./Header";
-import "./App.css";
+import "./ShowSubscribers.css";
 
 
-class App extends Component {
+class ShowSubscribers extends Component {
 
 
-  constructor()
-  {
-    super();
-    this.state = {
-      subscribersListToShow: []
-    }
-  }
+  // constructor()
+  // {
+  //   super();
+  //   this.state = {
+  //     subscribersListToShow: []
+  //   }
+  //   console.log("construtor called ")
+  // }
 
   clickHandler (message){
     alert(message );
   }
 
-  render() {
+  // componentDidMount() {
+  //   let newSubscribers = 
+  //       {
+  //         id: 1,
+  //         name: "Shipla Bhatt",
+  //         phone: "8888888888"
+  //       }
 
+  //       let subscribersList = this.state.subscribersListToShow;
+  //       subscribersList.push(newSubscribers);
+  //       this.setState({subscribersListToShow: subscribersList});
+  //       console.log("componentDidMount called")
+  //       console.log("State ",this.state)
+    
+  // }
+
+  render() {
+    console.log("render called")
     // let subscribers = [
     //   {
     //     id: 1,
@@ -45,12 +62,13 @@ class App extends Component {
           </div>  
 
           {
-            this.state.subscribersListToShow.map(sub => {
+            // this.state.subscribersListToShow.map(sub => {
+            this.props.subscribersList.map(sub => {
               return  <div key = {sub.id} className="grid-container">
                         <span className="grid-item" > {sub.name} </span>
                         <span className="grid-item"> {sub.phone}  </span>
                         <span className="grid-item action-btn-container">
-                          <button className="custom-btn delete-btn" onClick={this.clickHandler.bind(this, sub.id)} > Delete</button>
+                          <button className="del-custom-btn delete-btn" onClick={this.clickHandler.bind(this, sub.id)} > Delete</button>
                         </span>
                        
                       </div>
@@ -63,4 +81,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscribers;

@@ -62,12 +62,7 @@
   text-transform: uppercase;
 }
 
-.delete-btn {
-  background: #f80000;
-  color: #000;
-}
-
-.custom-btn {
+.del-custom-btn {
   padding: 10px;
   border: none;
   margin-right: 10px;
@@ -76,7 +71,11 @@
   font-size: 0.9rem;
   cursor: pointer;
   outline: none;
-  background: #d3d3d3;
+}
+
+.delete-btn {
+  background: #fa9c9c;
+  color: #000;
 }
 
 .subscriber-form {

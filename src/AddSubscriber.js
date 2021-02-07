@@ -1,4 +1,4 @@
-import Ract, {Component} from 'react';
+import React, {Component} from 'react';
 import Header from './Header';
 import './AddSubscriber.css';
 
@@ -22,6 +22,20 @@ class AddSubscriber extends Component {
         console.log(this.state);
     }
 
+    onFormSubmitted = (e) => {
+        e.preventDefault();
+        this.props.addSubscriberHandler(this.state);
+        console.log("before call default",this.state)
+        this.setState(
+                {
+                    id:0, 
+                    name: '', 
+                    phone: 0
+                }
+            )
+            console.log("after call default",this.state)
+    }
+
     render(){
 
         const {name, phone} = this.state;
@@ -30,7 +44,7 @@ class AddSubscriber extends Component {
                 <Header heading="Add Subscriber"/>
                 <div className="component-body-container" >
                     <button className="custom-btn">Back</button>
-                    <form className="subscriber-form">
+                    <form className="subscriber-form" onSubmit={this.onFormSubmitted.bind(this)}>
                         <label htmlFor="name" className="label-control"> Name: </label> <br/>
                         <input type="text" id="name" className="input-control" name="name" onChange={this.inputChangedHandler}/> <br/> <br/>
                         <label htmlFor="phone" className="label-control"> Phone: </label> <br/>
